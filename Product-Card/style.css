@@ -11,6 +11,7 @@
   --red: #c72734;
   --red-light: #000000;
   --white: #84edff;
+  --dark-blue: #00c6e9;
 }
 body {
   width: 100%;
@@ -69,4 +70,88 @@ body {
     margin-top: 100px;
     transform: rotate(-40deg);
     transition: 1s;
+}
+
+.card.active .product-img {
+  margin-top:40px;
+  transform: rotate(-20deg);
+}
+
+.price {
+  opacity: 0;
+  transform: translateY(40px);
+  color: var(--white);
+  font-size: 40px;
+  margin-top: 20px;
+  transition: 1s;
+}
+
+.sizes {
+    opacity: 0;
+  transform: translateY(40px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s;
+}
+
+.size {
+  color: #000000;
+  background-color: var(--white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.size.active,
+.size:hover {
+  background-color: var(--dark-blue);
+  color: var(--red-light);
+}
+
+.card.active .btn-container {
+    opacity: 1;
+  transform: translateY(0);
+  transition: 1s;
+  transition-delay: 1s;
+}
+
+.card.active .price,
+.card.active .sizes{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-container {
+    opacity: 0;
+  transform: translateY(40px);
+  width: calc(100% + 40px);
+  display: block;
+  position: absolute;
+  height: 40px;
+  bottom: -80px;
+  left: -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 48%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn.buy {
+  background-color: var(--dark-blue);
+  color: var(--red-light);
 }
